@@ -5,54 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Link Access Page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
+    html, body {
       margin: 0;
-      padding: 20px;
+      padding: 10px;
+      background-color: #f4f6f8;
+      font-family: Arial, sans-serif;
       text-align: center;
+      height: 100%;
+      overflow: hidden;
     }
+
     h1 {
+      font-size: 1.8vw;
       color: #333;
+      margin-bottom: 10px;
     }
+.wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      max-height: 100vh;
+      overflow-y: auto;
+}
+
+    h2 {
+      font-size: 1.2vw;
+      color: #ffffff;
+      background-color: #007bff;
+      padding: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
     .link-box {
       display: inline-block;
       background-color: white;
-      padding: 15px 25px;
-      margin: 10px;
+      padding: 10px 15px;
+      margin: 6px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-decoration: none;
       color: #007bff;
       font-weight: bold;
-      transition: 0.2s;
+      transition: background-color 0.2s;
+      font-size: 0.9vw;
     }
+
     .link-box:hover {
       background-color: #e9f0fa;
     }
+
+    .category-content {
+      overflow: hidden;
+      max-height: 1000px;
+      transition: max-height 0.5s ease;
+    }
+
+    .collapsed {
+      max-height: 0;
+      transition: max-height 0.5s ease;
+    }
+
+    /* Fit entire content to screen with scroll if needed */
+    .wrapper {
+      max-height: 100vh;
+      overflow-y: auto;
+      padding-bottom: 20px;
+    }
+  /* ✅ Mobile Styles */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+
+    .wrapper {
+      padding: 0 10px 30px;
+      margin: 0 auto;
+    }
+
+    .link-box {
+      font-size: 14px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 10px 0;
+    }
+
+    h1, h2 {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    h2 {
+      padding: 10px;
+    }
+
   </style>
 </head>
 <body>
-  <h1>Auction Team Links</h1>
-  <a class="link-box" href="https://docs.google.com/spreadsheets/d/1ejVRg2D8Qp3IBf7NE_L21Wc33eI2C6GU_KWsCmVn3AA/edit?gid=0#gid=0" target="_blank">Calling Sheet</a>
-  <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLScVcLnZjPYVO4DQWZt_4yA24gPxC7puUESkYt_tyw4DE6dF2Q/viewform" target="_blank">Inhouse Recovery Update Form</a>
-  <a class="link-box" href="https://rupeekauctionteam.github.io/RupeekAuctionTeam-Fed-to-RCPL-ITO-Consent-form-PDF/" target="_blank">Fed to RCPL ITO Consent form</a>
-  <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLSdNoHUiUOFtBj-NX1CuLRWxp-zXH0sNBKjuunQxHozAOf1tHA/viewform?pli=1&pli=1" target="_blank">ITO / RnRP
-Bokking Form</a>
- <a class="link-box" href="https://docs.google.com/spreadsheets/d/1GvpfvSq6hOlQDJXmUpHKEp0biJvRwI5_Vm4E4_UCO6s/edit?gid=581047884#gid=581047884" target="_blank">PAN Release and Repledge</a>
-  <a class="link-box" href="https://rupeekauctionteam.github.io/DA-Calculator/" target="_blank">DA-Calculator</a>
-  <a class="link-box" href="https://script.google.com/a/macros/rupeek.com/s/AKfycbzhIz3Z1x3ipHQfXrNlPo9XrRJWSRRS-AOzBkw4tpyvLSs5cfkN1NfDaA1_GLLHJTppwA/exec" target="_blank">Branch Mail Sender</a>
-<a class="link-box" href="https://docs.google.com/spreadsheets/d/1-KGnb0_oKHLJ2-g-GfwKHCO1It_A1iQeAFBpWAbOFJU/edit?gid=1067639263#gid=1067639263" target="_blank">Branch Details</a>
-  <a class="link-box" href="https://docs.google.com/spreadsheets/d/1OC5xPWdh78C81gzGgw9hmHN2CRUm6F35yvJY-CvlNrg/edit?gid=1991574106#gid=1991574106" target="_blank">Post-Auction Master Sheet</a>
-<a class="link-box" href="https://docs.google.com/spreadsheets/d/1Hup_cWbBdcftM5pJurTKBSz_Zpcxt8wKB51svMbqRP4/edit?gid=253090330#gid=253090330" target="_blank">Post Auctioned Data-LP</a>
-  <a class="link-box" href="https://rupeek.lightning.force.com/lightning/page/home" target="_blank">Salesforce</a>
-  <a class="link-box" href="https://vaani.rupeek.com/rupeek/agent/agent.php" target="_blank">VAANI</a>
-  <a class="link-box" href="https://rupeekwebsvc.rupeek.com/admin/search" target="_blank">Core DB</a>
-  <a class="link-box" href="https://growth.rupeek.com/login" target="_blank">Growth</a>
-  <a class="link-box" href="https://app1.leegality.com/login" target="_blank">Leegality</a>
- 
+  <div class="wrapper">
+    <h1>Auction Team Links</h1>
 
+    <h2 onclick="toggleCategory(this)">Google Sheets</h2>
+    <div class="category-content">
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1ejVRg2D8Qp3IBf7NE_L21Wc33eI2C6GU_KWsCmVn3AA/edit?gid=0#gid=0" target="_blank">Pre Auction Calling Sheet</a>
+<a class="link-box" href="https://docs.google.com/spreadsheets/d/1OKTXDIKTCfSjiDsMJivefMOKjGMcmaZsRYEvldDOb6o/edit?gid=0#gid=0" target="_blank">Post Auction Calling Sheet</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1GvpfvSq6hOlQDJXmUpHKEp0biJvRwI5_Vm4E4_UCO6s/edit?gid=581047884#gid=581047884" target="_blank">PAN Release and Repledge</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1-KGnb0_oKHLJ2-g-GfwKHCO1It_A1iQeAFBpWAbOFJU/edit?gid=1067639263#gid=1067639263" target="_blank">Branch Details</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1OC5xPWdh78C81gzGgw9hmHN2CRUm6F35yvJY-CvlNrg/edit?gid=1991574106#gid=1991574106" target="_blank">Post-Auction Master Sheet</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1Hup_cWbBdcftM5pJurTKBSz_Zpcxt8wKB51svMbqRP4/edit?gid=253090330#gid=253090330" target="_blank">Post Auctioned Data-LP</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1VIheON6y-CnGPb-IW1fisXdmnF2UHDwNo-3U13_rNf4/edit?gid=0#gid=0" target="_blank">Post Auction BO Recon</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1pJNtuM9AB1dpCK59UfL61tkrMwvfbDoY14WeQ1pRMAI/edit?gid=2142952932#gid=2142952932" target="_blank">Collection ITO Master</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1lYFSXfhFiYJx7fwRYyY4MWoCYneBolDyhAOlp60_bz0/edit?gid=888206891#gid=888206891" target="_blank">Collateral Pending at Vault</a>
+      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1AuuTSyZqEFU19uylehNXvhOD-5292GgLl97ZKT05ex0/edit?pli=1&gid=0#gid=0" target="_blank">RE/PR/Ret/Override Active Schemes</a>
+    </div>
 
-  <!-- Add more links below as needed -->
+    <h2 onclick="toggleCategory(this)">Forms</h2>
+    <div class="category-content">
+<a class="link-box" href="https://docs.google.com/spreadsheets/d/1gHaXfk77Jq9qdwhXA8yl-ctWr7MpHIFKm9sMN4duV_w/edit?gid=1711030327#gid=1711030327" target="_blank">Inhouse Recovery Responses</a>
+      <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLScVcLnZjPYVO4DQWZt_4yA24gPxC7puUESkYt_tyw4DE6dF2Q/viewform" target="_blank">Inhouse Recovery Update Form</a>
+      <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLSdNoHUiUOFtBj-NX1CuLRWxp-zXH0sNBKjuunQxHozAOf1tHA/viewform?pli=1&pli=1" target="_blank">ITO / RnRP Bokking Form</a>
+      <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLSekCFOSrNt2mbnpYASRCmzC3S1JVdldkNogI4Do3hZcc2qaYQ/viewform" target="_blank">Un-Resolved SF Tickets Form</a>
+    </div>
+
+    <h2 onclick="toggleCategory(this)">Tools & Calculators</h2>
+    <div class="category-content">
+      <a class="link-box" href="https://rupeekauctionteam.github.io/RupeekAuctionTeam-Fed-to-RCPL-ITO-Consent-form-PDF/" target="_blank">Fed to RCPL ITO Consent form</a>
+      <a class="link-box" href="https://rupeekauctionteam.github.io/DA-Calculator/" target="_blank">DA-Calculator</a>
+      <a class="link-box" href="https://script.google.com/a/macros/rupeek.com/s/AKfycbzhIz3Z1x3ipHQfXrNlPo9XrRJWSRRS-AOzBkw4tpyvLSs5cfkN1NfDaA1_GLLHJTppwA/exec" target="_blank">Branch Mail Sender</a>
+    </div>
+
+    <h2 onclick="toggleCategory(this)">Platforms</h2>
+    <div class="category-content">
+      <a class="link-box" href="https://rupeek.lightning.force.com/lightning/page/home" target="_blank">Salesforce</a>
+      <a class="link-box" href="https://vaani.rupeek.com/rupeek/agent/agent.php" target="_blank">VAANI</a>
+      <a class="link-box" href="https://rupeekwebsvc.rupeek.com/admin/search" target="_blank">Core DB</a>
+      <a class="link-box" href="https://growth.rupeek.com/login" target="_blank">Growth</a>
+      <a class="link-box" href="https://app1.leegality.com/login" target="_blank">Leegality</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleCategory(header) {
+      const content = header.nextElementSibling;
+      content.classList.toggle('collapsed');
+    }
+  </script>
 </body>
 </html>
